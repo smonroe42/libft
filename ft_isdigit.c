@@ -6,14 +6,13 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 07:09:42 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/16 07:10:48 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/18 10:16:48 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (c);
-	else
-		return (0);
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/18 02:14:24 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/18 10:07:58 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		d[i] = s[i];
 	if (s[i] == q)
 		return (unsigned char *)(d + i + 1);
-	return NULL;
+	return (NULL);
 }

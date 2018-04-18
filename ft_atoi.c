@@ -6,9 +6,11 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 08:10:38 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/17 22:55:57 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/18 10:49:19 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {
@@ -22,19 +24,18 @@ int		ft_atoi(const char *str)
 	while (str[i] == '\r' || str[i] == '\n' || str[i] == '\t' ||
 			str[i] == '\f' || str[i] == '\v' || str[i] == ' ')
 		i++;
+	if (str[i] == '-' || str[i] == '+')
+		l = i++;
 	while (str[i] != '\0')
 	{
 		if (n >= 922337203685477580 && (((str[i] - '0') > 8 && str[l] == '-') ||
 										((str[i] - '0') > 7 && str[l] != '-')))
-			return (str[l] == '-'? 0 : -1);
+			return (str[l] == '-' ? 0 : -1);
 		if (str[i] >= '0' && str[i] <= '9')
 			n = n * 10 + (str[i] - '0');
-		else if (str[i] == '-')
-			l = i;
-		else if (str[i] == '\r' || str[i] == '\n' || str[i] == '\t' || str[i] ==
-	'\f' || str[i] == '\v' || str[i] == ' ' || (str[i] >= 0 && str[i] < ' '))
+		else if (!(str[i] >= '0' && str[i] <= '9'))
 			break ;
 		i++;
 	}
-	return (str[l] == '-' ? -n : n);
+	return (str[l] == '-' ? (n * -1) : n);
 }

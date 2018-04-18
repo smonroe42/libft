@@ -6,7 +6,7 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 22:27:50 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/17 23:08:24 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/18 10:10:25 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memalloc(size_t size)
 		bzero(new, size);
 		return (new);
 	}
-	return NULL;
+	return (NULL);
 }
