@@ -19,7 +19,6 @@ SRC = ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c\
 	ft_strstr.c	ft_strnstr.c ft_strcmp.c ft_strncmp.c\
 	ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c\
-	ft_memalloc.c ft_memdel.c
 
 OBJ = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o\
 	ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlen.o\
@@ -28,7 +27,6 @@ OBJ = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o\
 	ft_strstr.o ft_strnstr.o ft_strcmp.o ft_strncmp.o\
 	ft_atoi.o ft_isalpha.o ft_isdigit.o ft_isalnum.o\
 	ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o\
-	ft_memalloc.o ft_memdel.o
 
 all: $(NAME)
 
