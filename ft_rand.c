@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_rand.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 07:30:29 by smonroe          ###   ########.fr       */
+/*   Created: 2018/04/21 00:01:05 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/21 08:50:08 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		ft_rand(int max)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-	unsigned char		q;
+	char	num[9];
+	int		n;
+	int		i;
+	int		r;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	q = c;
 	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((unsigned char *)dst + i + 1);
-		i++;
-	}
-	return (NULL);
+	r = 0;
+	n = open("/dev/random", O_RDONLY);
+	read(n, num, 9);
+	close(n);
+	while (i < 9)
+		r += r * 10 + (num[i++] - '0');
+	r %= max;
+	return (r < 0 ? -r : r);
 }

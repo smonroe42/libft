@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 07:30:29 by smonroe          ###   ########.fr       */
+/*   Created: 2018/04/19 06:19:30 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/19 07:11:52 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-	unsigned char		q;
-
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	q = c;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((unsigned char *)dst + i + 1);
-		i++;
-	}
-	return (NULL);
+	if (n)
+		if (fd)
+		{
+			if (n == -2147483648)
+				ft_putstr_fd("-2147483648", fd);
+			else if (n < 0)
+			{
+				ft_putchar_fd('-', fd);
+				n = -n;
+			}
+			else if (n > 9)
+			{
+				ft_putnbr_fd(n / 10, fd);
+				ft_putchar_fd((n % 10) + '0', fd);
+			}
+			else if (n < 10)
+				ft_putchar_fd(n + '0', fd);
+		}
 }

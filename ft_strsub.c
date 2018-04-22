@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 07:30:29 by smonroe          ###   ########.fr       */
+/*   Created: 2018/04/20 19:58:46 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/21 15:39:56 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-	unsigned char		q;
+	char	*sub;
+	int		i;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	q = c;
+	if (!(s))
+		return (NULL);
 	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((unsigned char *)dst + i + 1);
-		i++;
-	}
-	return (NULL);
+	if (!(sub = ft_strnew(len)))
+		return (NULL);
+	len += start;
+	while (start < len && s[start] != '\0')
+		sub[i++] = s[start++];
+	if (start != len)
+		return (NULL);
+	sub[i] = '\0';
+	return (sub);
 }

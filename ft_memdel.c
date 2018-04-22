@@ -6,7 +6,7 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 22:30:05 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/17 23:01:38 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/21 15:55:12 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap)
+	if (ap && *ap)
 	{
-		while (ap)
-			free(ap);
 		free(*ap);
-		ap = NULL;
+		*ap = NULL;
 	}
 }

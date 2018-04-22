@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 07:30:29 by smonroe          ###   ########.fr       */
+/*   Created: 2018/04/20 17:54:17 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/20 18:44:27 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-	unsigned char		q;
+	int	i;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	q = c;
-	i = 0;
-	while (i < n)
+	if (s1 && s2)
 	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((unsigned char *)dst + i + 1);
-		i++;
+		i = 0;
+		while (s1[i] == s2[i] && s1[i] && s2[i])
+			i++;
+		if (!s1[i] && !s2[i])
+			return (1);
+		return (0);
 	}
-	return (NULL);
+	return (0);
 }

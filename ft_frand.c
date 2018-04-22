@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_frand.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 07:30:29 by smonroe          ###   ########.fr       */
+/*   Created: 2018/04/21 07:42:48 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/21 08:50:02 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+float	ft_frand(void)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-	unsigned char		q;
+	char	num[9];
+	int		n;
+	int		i;
+	int		r;
+	float	f;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	q = c;
 	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((unsigned char *)dst + i + 1);
-		i++;
-	}
-	return (NULL);
+	r = 0;
+	f = 0.0f;
+	n = open("/dev/random", O_RDONLY);
+	read(n, num, 9);
+	close(n);
+	while (i < 9)
+		r += r * 10 + (num[i++] - '0');
+	r %= 2147483647;
+	if (r < 0)
+		r = -r;
+	f += (r / 2147483647.0f);
+	return (f);
 }

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 05:25:48 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 07:30:29 by smonroe          ###   ########.fr       */
+/*   Created: 2018/04/20 19:59:00 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/21 15:42:57 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-	unsigned char		q;
+	char	*new;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	q = c;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((unsigned char *)dst + i + 1);
-		i++;
-	}
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (NULL);
+	if ((new = ft_strncat(new, s1, ft_strlen(s1) + ft_strlen(s2))))
+		if ((new = ft_strncat(new, s2, ft_strlen(s1) + ft_strlen(s2))))
+			return (new);
 	return (NULL);
 }
