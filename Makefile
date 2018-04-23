@@ -6,7 +6,7 @@
 #    By: smonroe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/16 06:21:48 by smonroe           #+#    #+#              #
-#    Updated: 2018/04/22 05:50:07 by smonroe          ###   ########.fr        #
+#    Updated: 2018/04/23 02:39:18 by smonroe          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,7 +27,7 @@ SRC = ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c\
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
 	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c\
 	ft_lstiter.c ft_lstmap.c ft_isspace.c ft_malloc_2d.c\
-	ft_rand.c ft_frand.c ft_strrev.c
+	ft_strrev.c
 
 OBJ = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o\
 	ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlen.o\
@@ -44,7 +44,7 @@ OBJ = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o\
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o\
 	ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o\
 	ft_lstiter.o ft_lstmap.o ft_isspace.o ft_malloc_2d.o\
-	ft_rand.o ft_frand.o ft_strrev.o
+	ft_strrev.o
 
 all: $(NAME)
 
