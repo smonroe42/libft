@@ -6,12 +6,11 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 14:35:34 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/23 02:05:51 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/23 02:33:03 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_intlen(int n)
 {
@@ -38,7 +37,7 @@ char		*ft_itoa(int n)
 	i = 0;
 	s = 0;
 	zero = "0\0";
-	if (!(rev = ft_strnew(ft_intlen(num) + 1)))
+	if (!(rev = ft_strnew(ft_intlen(num))))
 		return (NULL);
 	if (num < 0)
 	{
