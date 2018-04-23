@@ -6,12 +6,11 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 20:13:34 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/23 00:40:21 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/23 02:37:53 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	**ft_make_2d(char const *s, char **bloc, char c)
 {
