@@ -6,7 +6,7 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 14:35:34 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/21 18:53:43 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/23 02:05:51 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ char		*ft_itoa(int n)
 	int		s;
 	int		i;
 	long	num;
+	char	*zero;
 
 	num = n;
 	i = 0;
 	s = 0;
-	if (!(rev = ft_strnew(ft_intlen(num))))
+	zero = "0\0";
+	if (!(rev = ft_strnew(ft_intlen(num) + 1)))
 		return (NULL);
 	if (num < 0)
 	{
@@ -44,7 +46,7 @@ char		*ft_itoa(int n)
 		s = -1;
 	}
 	if (num == 0)
-		return ("0\0");
+		return (zero);
 	rev[i++] = (num % 10) + '0';
 	while (num /= 10)
 		rev[i++] = (num % 10) + '0';
