@@ -6,7 +6,7 @@
 /*   By: smonroe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 06:44:19 by smonroe           #+#    #+#             */
-/*   Updated: 2018/04/22 05:56:03 by smonroe          ###   ########.fr       */
+/*   Updated: 2018/04/23 02:39:29 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ typedef struct		s_list
 
 int					ft_isspace(const char c);
 char				**ft_malloc_2d(size_t col, size_t row);
-int					ft_rand(int max);
-float				ft_frand(void);
 void				ft_strrev(char *s);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
